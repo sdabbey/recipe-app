@@ -45,7 +45,7 @@ const RecipeDetail = ({params}: {params: {id: string}}) => {
             }
         };
         getRecipeDetails();
-    }, [])
+    }, [params.id])
 
     //Handle Delete
     const handleDelete = async () => {

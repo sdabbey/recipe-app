@@ -8,7 +8,7 @@ import { signIn } from 'next-auth/react';
 
 
 
-const forgotPasspage = () => {
+const ForgotPasswordPage = () => {
     const router = useRouter();
     const [email, setEmail] = useState('');
     
@@ -67,4 +67,4 @@ const forgotPasspage = () => {
   )
 }
 
-export default forgotPasspage
+export default ForgotPasswordPage

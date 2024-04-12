@@ -15,7 +15,7 @@ import dynamic from 'next/dynamic';
 const SimpleMDE = dynamic(() => import('react-simplemde-editor'), { ssr: false });
 
 
-const createRecipe = () => {
+const CreateRecipe = () => {
     const router = useRouter()
 
     const session = useSession({
@@ -189,5 +189,5 @@ const createRecipe = () => {
     )
 }
 
-export default createRecipe
-createRecipe.requireAuth = true
+export default CreateRecipe
+CreateRecipe.requireAuth = true

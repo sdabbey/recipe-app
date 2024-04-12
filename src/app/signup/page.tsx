@@ -8,7 +8,7 @@ import { useRouter } from 'next/navigation';
 
 
 
-const signUppage = () => {
+const SignUpPage = () => {
     const router = useRouter();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -126,4 +126,4 @@ const signUppage = () => {
   )
 }
 
-export default signUppage
+export default SignUpPage
