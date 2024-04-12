@@ -401,9 +401,12 @@ display: none;
         .recipe-wrapper{
             padding: .3rem;
             border: 1px solid rgba(0, 0, 0, 0.048);
+            
+            justify-content: space-around;
+            flex-wrap: wrap;
             .recipe{
             
-                width: calc(100% / 2.2);
+                width: calc(100% / 2.1);
                 height: 180px;
                 box-sizing: border-box;
                 padding: 0;
@@ -423,7 +426,7 @@ display: none;
                         }
                     }
                     .card-content{
-                        padding: .2rem;
+                        padding: .2rem .4rem;
                         height: 40%;
                         
                         h3{

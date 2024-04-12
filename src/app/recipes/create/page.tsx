@@ -1,11 +1,11 @@
 'use client'
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { auth, db, storage } from '@/app/firebase';
 import { getDownloadURL, ref, uploadBytesResumable } from 'firebase/storage';
 import { addDoc, collection, getDocs } from 'firebase/firestore';
 import { useSession } from 'next-auth/react';
 import { redirect, useRouter } from 'next/navigation';
-import { getAuth } from 'firebase/auth';
+import { getAuth, User } from 'firebase/auth';
 import "@/app/style.css"
 //import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
@@ -24,7 +24,7 @@ const createRecipe = () => {
           redirect('/signin');
         }
       })
-      console.log(auth)
+      
     
 
 
@@ -34,13 +34,22 @@ const createRecipe = () => {
     const [cookTime, setcookTime] = useState(0);
     const [file, setFile] = useState(null);
     
-    
+    const [user, setUser] = useState<User | null>(null);
+
+    useEffect(() => {
+        const unsubscribe = auth.onAuthStateChanged((user) => {
+            setUser(user);
+        });
+        return () => unsubscribe();
+    }, []);
+
+
     const handleImageUpload = (e:any) => {
         setFile(e.target.files[0]);
     }
 
     const handleSubmit = (e:any) => {
-        //e.preventDefault();
+        e.preventDefault();
 
         if(file){
             const fileWithName = file as File;
@@ -48,6 +57,7 @@ const createRecipe = () => {
             const uploadTask = uploadBytesResumable(storageRef, fileWithName);
             const auth = getAuth()
             const currentUser = auth.currentUser;
+            console.log(currentUser)
             if(currentUser){
                 const userId = currentUser.uid;
                 uploadTask.on(
@@ -117,15 +127,7 @@ const createRecipe = () => {
        
     };
 
-    const textarea = document.querySelector(".CodeMirror");
 
-    // Add an event listener for input changes
-    textarea?.addEventListener("input", function(this: HTMLDivElement) {
-   
-    this.style.height = "auto";
-    // Set the textarea's height to its scrollHeight
-    this.style.height = this.scrollHeight + "px";
-    });
     return (
         <div className='recipe-create-container flex items-center justify-center pt-20'>
            <form onSubmit={handleSubmit} className='p-2 flex  lg:w-1/3 w-full box-border flex-col'>

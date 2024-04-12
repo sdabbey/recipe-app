@@ -373,9 +373,11 @@
   .recipe-container .recipe-wrapper {
     padding: 0.3rem;
     border: 1px solid rgba(0, 0, 0, 0.048);
+    justify-content: space-around;
+    flex-wrap: wrap;
   }
   .recipe-container .recipe-wrapper .recipe {
-    width: 45.4545454545%;
+    width: 47.619047619%;
     height: 180px;
     box-sizing: border-box;
     padding: 0;
@@ -395,7 +397,7 @@
     width: 100%;
   }
   .recipe-container .recipe-wrapper .recipe .recipe-card .card-content {
-    padding: 0.2rem;
+    padding: 0.2rem 0.4rem;
     height: 40%;
   }
   .recipe-container .recipe-wrapper .recipe .recipe-card .card-content h3 {
