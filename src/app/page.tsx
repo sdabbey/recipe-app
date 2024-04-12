@@ -23,7 +23,7 @@ export default function Home() {
             <h3>Spicy & Delicious Cuisines.</h3>
             <p>Slide into our archives of delicious recipes in a range of intercontinental foods.</p>
             <Link href={"/recipes"} className="btn-imp flex items-center gap-2">View All Recipes <FaChevronCircleRight className="mr-2 p-0" /></Link>
-            <p className="text-xs">Want to create your own recipe? <Link className="text-primary" href={"/signup"}>sign up here</Link></p>
+            <p className="text-xs">Want to create your own recipe? <Link className="text-orange-600" href={"/signup"}>sign up here</Link></p>
         </div>
         <div className="right-sec">
             <Image width={600} height={600} src={"https://firebasestorage.googleapis.com/v0/b/recipe-app-3b018.appspot.com/o/food.jpg?alt=media&token=3ef1d1e6-aa64-4ca9-b3bc-ae14c35802d6"} alt="" />
