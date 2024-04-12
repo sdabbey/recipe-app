@@ -61,7 +61,7 @@ const Navbar = () => {
              : 
              links.map(link => <Link key={link.href} className={classNames({
                  'hidden': link.href === currentPath,
-                 'btn first:bg-transparent first:text-primary me-3 inline-block rounded bg-primary px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none': link.href !== currentPath,
+                 'btn first:bg-transparent first:text-orange-600 me-3 inline-block rounded bg-orange-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black shadow-primary-3 transition duration-150 ease-in-out hover:bg-orange-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-orange-600 active:shadow-primary-2 motion-reduce:transition-none': link.href !== currentPath,
                  ' hover:scale-102 first:hover:bg-transparent transition-colors': true
              })} href={link.href}>{link.label}</Link>)}
               
