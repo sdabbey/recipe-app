@@ -6,6 +6,7 @@ import { addDoc, collection, getDocs } from 'firebase/firestore';
 import { useSession } from 'next-auth/react';
 import { redirect, useRouter } from 'next/navigation';
 import { getAuth } from 'firebase/auth';
+import "@/app/style.css"
 //import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
 import dynamic from 'next/dynamic';
@@ -116,11 +117,20 @@ const createRecipe = () => {
        
     };
 
+    const textarea = document.querySelector(".CodeMirror");
+
+    // Add an event listener for input changes
+    textarea?.addEventListener("input", function(this: HTMLDivElement) {
+   
+    this.style.height = "auto";
+    // Set the textarea's height to its scrollHeight
+    this.style.height = this.scrollHeight + "px";
+    });
     return (
-        <div className='flex items-center justify-center pt-20'>
-           <form onSubmit={handleSubmit} className='p-2 flex  w-1/3 box-border flex-col' style={{"height": "80%"}}>
-            <h1 className="mb-3 text-center w-full box-border">Create Recipe</h1>
-                <div className='mb-3 w-full box-border border-red'>
+        <div className='recipe-create-container flex items-center justify-center pt-20'>
+           <form onSubmit={handleSubmit} className='p-2 flex  lg:w-1/3 w-full box-border flex-col'>
+            <h1 className="mb-3 text-center font-bold w-full box-border">Create Recipe</h1>
+                <div className='mb-3 w-full box-border '>
                     <input
                         className='w-full p-2 rounded'
                         type="text" value={title} 
@@ -130,7 +140,7 @@ const createRecipe = () => {
                         style={{"border": "1px solid grey"}}
                     />
                 </div>
-                <div className='mb-3 w-full box-border border-2 border-red'>
+                <div className='mb-3 w-full box-border '>
                     <textarea
                         className='w-full p-2 rounded'
                         value={ingredients} 
@@ -141,12 +151,12 @@ const createRecipe = () => {
                         style={{"border": "1px solid grey"}}
                     ></textarea>
                 </div>
-               <SimpleMDE value={instructions} 
+               <SimpleMDE  value={instructions} 
                 
                     onChange={(newValue) => setInstructions(newValue)}
                     placeholder='Instructions'
                     />
-                {/* <div className='mb-3 w-full box-border border-2 border-red'>
+                {/* <div className='mb-3 w-full box-border border-2 '>
                     <textarea
                         className='w-full p-2 rounded'
                         value={instructions} 
@@ -157,7 +167,7 @@ const createRecipe = () => {
                         style={{"border": "1px solid grey"}}
                     ></textarea>
                 </div> */}
-                <div className='mb-3 w-full box-border border-red'>
+                <div className='mb-3 w-full box-border'>
                     <input
                         className='w-full p-2 rounded'
                         type="number" value={cookTime} 
@@ -167,11 +177,11 @@ const createRecipe = () => {
                         style={{"border": "1px solid grey"}}
                     />
                 </div>
-                <div className='mb-3 w-full box-border border-2 border-red'>
+                <div className='mb-3 w-full box-border '>
                     <input type="file" required  onChange={handleImageUpload}/>
                 </div>
 
-                <button type='submit' className='bg-primary p-3 rounded text-white'>Submit</button>
+                <button type='submit' className='bg-orange-600 p-3 rounded text-white'>Submit</button>
             </form> 
         </div>
     )

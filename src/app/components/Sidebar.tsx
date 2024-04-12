@@ -13,6 +13,8 @@ const Sidebar = () => {
       {label: 'Login', href: '/signin'}
   ]
   const currentPath = usePathname();
+
+  
   return (
     <>
     <div className="sidebar" id="sidebar">
@@ -26,6 +28,13 @@ const Sidebar = () => {
                     href={"/recipes"}>Recipes
                   </Link>
                   
+                  {session.data?.user ? <Link
+                    className="text-white transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none lg:px-2"
+                    aria-current="page"
+                    href={"/recipes/create"}>Create Recipe
+                  </Link> 
+                  :
+                  null}
     
                 </div>
                 <div className="action">

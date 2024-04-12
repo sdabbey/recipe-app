@@ -24,9 +24,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
 
+
+  
   
   return (
     <html lang="en">
+      
       <body className={`${inter.className} h-screen flex flex-col box-border`} style={{"border": "2px solid black", "padding": "0"}}>
         <SessionProvider>
           <DynamicComponent/>
@@ -36,6 +39,7 @@ export default function RootLayout({
             {children}
           </div>
         </SessionProvider>
+        
       </body>
     </html>
   );
