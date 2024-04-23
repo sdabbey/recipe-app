@@ -1,7 +1,7 @@
 'use client'
 import React, { useEffect } from 'react'
 import { signOut, useSession } from "next-auth/react";
-import { usePathname } from "next/navigation";
+import { redirect, usePathname, useRouter } from "next/navigation";
 import Link from "next/link";
 import classNames from "classnames";
 import { dScript } from '../Navbar';
@@ -12,7 +12,8 @@ const Sidebar = () => {
       {label: 'SignUp', href: '/signup'},
       {label: 'Login', href: '/signin'}
   ]
-  const currentPath = usePathname();
+  const currentPath = usePathname() || "";
+  const router = useRouter();
   const navTrigger = document.getElementById("nav-trigger");
   const sidebar = document.getElementById("sidebar");
   useEffect(() => {
@@ -51,8 +52,17 @@ const Sidebar = () => {
         link.removeEventListener("click", handleLinkClick);
       });
     };
-  }, []);
-  
+  }, [currentPath]);
+
+  const SignOut = async () => {
+    await signOut({redirect: false, callbackUrl: "/"});
+    try {
+      router.push(currentPath);
+      console.log("Navigation successful");
+    } catch (error) {
+      console.error("Error during navigation:", error);
+    }
+  }
   return (
     <>
     <div className="sidebar" id="sidebar">
@@ -78,7 +88,7 @@ const Sidebar = () => {
                 <div className="action">
                     
                     
-                {session.data?.user ? <div className="text-orange-600 flex flex-col gap-4 items-center"> <span style={{"pointerEvents": "none"}}>{session.data?.user?.email}</span> <button onClick={() => signOut()} type='button' className={'logout me-3 inline-block rounded bg-orange-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none '}>Logout</button></div>  
+                {session.data?.user ? <div className="text-orange-600 flex flex-col gap-4 items-center"> <span style={{"pointerEvents": "none"}}>{session.data?.user?.email}</span> <button onClick={SignOut} type='button' className={'logout me-3 inline-block rounded bg-orange-600 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-white shadow-primary-3 transition duration-150 ease-in-out hover:bg-primary-accent-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-primary-600 active:shadow-primary-2 motion-reduce:transition-none '}>Logout</button></div>  
                 : 
                 links.map(link => <Link key={link.href} className={classNames({
                     'hidden': link.href === currentPath,
@@ -88,7 +98,8 @@ const Sidebar = () => {
               
                   
                 </div>
-            </div></>
+            </div>
+            </>
   )
 }
 

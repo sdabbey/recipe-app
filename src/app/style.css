@@ -160,6 +160,14 @@
   justify-content: center;
 }
 
+.success-message {
+  padding: 0.5rem 0rem;
+  color: green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .fadeOut {
   animation: fadeOutAnimation 3s ease forwards;
 }

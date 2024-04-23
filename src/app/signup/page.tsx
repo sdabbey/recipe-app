@@ -4,8 +4,13 @@ import Link from 'next/link'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/app/firebase';
 import { useRouter } from 'next/navigation';
+import { useForm } from 'react-hook-form';
 
-
+interface SignUpForm {
+  email: String;
+  password: String;
+  passwordAgain: String;
+}
 
 
 const SignUpPage = () => {
@@ -14,26 +19,41 @@ const SignUpPage = () => {
     const [password, setPassword] = useState('');
     const [passwordAgain, setPasswordAgain] = useState('');
     
-    const signUp = async (e: any) => {
-      e.preventDefault();
-      const { email, password, confirm_password } = e.target.elements;
+    const [isSubmitting, setSubmitting] = useState(false);
+    const [error, setError] = useState('');
+    const [success, setSuccess] = useState('');
+    const {handleSubmit, formState: {errors}} = useForm<SignUpForm>();
+    
+    const signUp = handleSubmit(async () => {
+     
+      //const { email, password, confirm_password } = e.target.elements;
       
-      if (password.value !== confirm_password.value) {
-        console.error("Passwords do not match");
+      if (password !== passwordAgain) {
+        setError("Passwords do not match");
         // You can display an error message to the user or handle the error accordingly
         return;
       }
     
       try {
-        await createUserWithEmailAndPassword(auth, email.value, password.value);
+        setSubmitting(true);
+        const result = await createUserWithEmailAndPassword(auth, email, password);
         console.log("User signed up successfully!");
-        router.push("/signin");
+        setSuccess("User account created successfully")
+        router.push('/signin');
+        
       } catch (error) {
-        console.error("Error signing up:", (error as Error).message);
+        setError("Error creating account.");
         // Handle the error (e.g., display an error message to the user)
+      } finally {
+        setSubmitting(false)
       }
-    };
+    });
 
+
+  const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+      e.preventDefault();
+      signUp();
+    };
   return (
     
 
@@ -46,7 +66,13 @@ const SignUpPage = () => {
 </div>
 
 <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-  <form className="space-y-6" onSubmit={signUp}  method="POST">
+  {error && <div className="error-message fadeOut">
+      <p>{error}</p>
+    </div>}
+  {success && <div className="success-message fadeOut">
+      <p>{success}</p>
+    </div>}
+  <form className="space-y-6" onSubmit={handleFormSubmit}  method="POST">
     <div>
       <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
         Email address

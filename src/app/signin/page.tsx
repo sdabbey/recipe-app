@@ -18,6 +18,7 @@ export default function Signin() {
 
   const [isSubmitting, setSubmitting] = useState(false);
   const [error, setError] = useState('');
+  const [success, setSuccess] = useState('');
   const {handleSubmit, formState: {errors}} = useForm<SignInForm>();
   const router = useRouter();
 
@@ -31,12 +32,13 @@ export default function Signin() {
       if (result?.error) {
         setError('Invalid user details. Try again');
       } else {
+        setSuccess("User SignIn successful")
         router.push('/');
       }
     } catch (error) {
       setError('Invalid user details. Try again')
       alert("hello")
-    }finally{
+    } finally {
       setSubmitting(false);
     }
 
@@ -70,8 +72,11 @@ export default function Signin() {
           
           <div className="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
           
-          {error && <div className="error-message fadeOut">
-                <p>{error}</p>
+            {error && <div className="error-message fadeOut">
+                  <p>{error}</p>
+              </div>}
+            {success && <div className="success-message fadeOut">
+                <p>{success}</p>
             </div>}
             <form className="space-y-6" onSubmit={handleFormSubmit}  method="POST">
             
