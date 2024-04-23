@@ -141,8 +141,8 @@
 }
 
 .recipe-container {
+  padding: 1rem;
   width: 100%;
-  padding: 0;
 }
 .recipe-container .recipe {
   box-sizing: border-box;
