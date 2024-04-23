@@ -12,13 +12,13 @@ const Sidebar = () => {
       {label: 'SignUp', href: '/signup'},
       {label: 'Login', href: '/signin'}
   ]
-  const currentPath = usePathname() || "";
+  const currentPath = usePathname() || "/";
   const router = useRouter();
-  const navTrigger = document.getElementById("nav-trigger");
-  const sidebar = document.getElementById("sidebar");
+
   useEffect(() => {
     
-   
+    const navTrigger = document.getElementById("nav-trigger");
+    const sidebar = document.getElementById("sidebar");
     if (navTrigger && sidebar) {
       const handleClick = () => {
         
@@ -55,13 +55,8 @@ const Sidebar = () => {
   }, [currentPath]);
 
   const SignOut = async () => {
-    await signOut({redirect: false, callbackUrl: "/"});
-    try {
-      router.push(currentPath);
-      console.log("Navigation successful");
-    } catch (error) {
-      console.error("Error during navigation:", error);
-    }
+    await signOut({callbackUrl: currentPath});
+    
   }
   return (
     <>
