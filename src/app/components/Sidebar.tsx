@@ -1,5 +1,5 @@
 'use client'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { signOut, useSession } from "next-auth/react";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
@@ -13,7 +13,45 @@ const Sidebar = () => {
       {label: 'Login', href: '/signin'}
   ]
   const currentPath = usePathname();
+  const navTrigger = document.getElementById("nav-trigger");
+  const sidebar = document.getElementById("sidebar");
+  useEffect(() => {
+    
+   
+    if (navTrigger && sidebar) {
+      const handleClick = () => {
+        
+        navTrigger.classList.toggle("active");
+        sidebar.classList.toggle("active");
+      };
 
+      navTrigger.addEventListener("click", handleClick);
+
+      return () => {
+        navTrigger.removeEventListener("click", handleClick);
+      };
+    }
+  }, [currentPath]);
+    
+  useEffect(() => {
+    const sidebarLinks = document.querySelectorAll("#sidebar a");
+    const handleLinkClick = () => {
+      const navTrigger = document.getElementById("nav-trigger");
+      const sidebar = document.getElementById("sidebar");
+      navTrigger?.classList.remove("active");
+      sidebar?.classList.remove("active");
+    };
+
+    sidebarLinks.forEach((link) => {
+      link.addEventListener("click", handleLinkClick);
+    });
+
+    return () => {
+      sidebarLinks.forEach((link) => {
+        link.removeEventListener("click", handleLinkClick);
+      });
+    };
+  }, []);
   
   return (
     <>

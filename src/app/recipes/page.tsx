@@ -21,7 +21,7 @@ export default function RecipesPage() {
     const session = useSession()
 
     
-    console.log(auth.currentUser)
+    
       const [recipesList, setRecipeslist] = useState<Recipe[]>([]);
     
       useEffect(() => {
@@ -36,7 +36,7 @@ export default function RecipesPage() {
         }
         getRecipeList();
       }, [])
-      console.log(recipesList)
+     
   return (
     <main className="recipe-container flex flex-col items-center justify-start gap-5 p-24 pb-0 pt-5 border-2" style={{ "height": "100%" }}>
       <div className="recipe-header flex justify-between items-center p-3 w-full h-1/5 border-2" style={{ "height": "15%" }}>

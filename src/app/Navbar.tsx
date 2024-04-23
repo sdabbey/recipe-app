@@ -20,21 +20,7 @@ const Navbar = () => {
     ]
     const currentPath = usePathname();
 
-    const navTrigger = document.getElementById("nav-trigger")
-        const sidebar = document.getElementById("sidebar")
-        navTrigger?.addEventListener("click", ()=>{
-            navTrigger.classList.toggle("active")
-            sidebar?.classList.toggle("active")
-        }) 
-        
-    // Add event listeners to sidebar links
-    const sidebarLinks = document.querySelectorAll("#sidebar a");
-    sidebarLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        navTrigger?.classList.remove("active");
-        sidebar?.classList.remove("active");
-      });
-    });
+   
 
    
   return (

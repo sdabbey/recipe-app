@@ -157,6 +157,28 @@ display: none;
         }
     }
 }
+
+.error-message{
+
+    padding: .5rem 0rem;
+    color: #FF3F3F;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.fadeOut {
+    animation: fadeOutAnimation 3s ease forwards;
+  }
+  
+  @keyframes fadeOutAnimation {
+    from {
+      opacity: 1;
+    }
+    to {
+      opacity: 0;
+      visibility: hidden;
+    }
+  }
 @media screen and (max-width: 1024px) {
     .navbar{
         .nav-logo{
