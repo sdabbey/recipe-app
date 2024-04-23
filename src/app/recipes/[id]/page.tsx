@@ -131,7 +131,7 @@ const RecipeDetail = ({params}: {params: {id: string}}) => {
                 />
             </div>
             
-            <button className='flex h-fit bg-primary p-2 px-4 rounded text-white'>Update</button>
+            <button className='flex h-fit bg-blue-600 p-2 px-4 rounded text-white'>Update</button>
             {session.data?.user ? <button onClick={handleDelete} className="flex h-fit items-center ml-6 bg-red-500 p-2 px-4 rounded text-white">
                 Delete Recipe
             </button> : null}
