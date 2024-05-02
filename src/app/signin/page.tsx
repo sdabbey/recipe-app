@@ -92,7 +92,7 @@ export default function Signin() {
                     autoComplete="email"
                     required
                     onChange={(e) => setEmail(e.target.value)}
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-purple-700 sm:text-sm sm:leading-6"
                   />
                 </div>
                 <ErrorMessage>{errors.email?.message}</ErrorMessage>
@@ -104,7 +104,7 @@ export default function Signin() {
                     Password
                   </label>
                   <div className="text-sm">
-                    <Link href={"/forgot-password"} className="font-semibold text-indigo-600 hover:text-indigo-500">
+                    <Link href={"/forgot-password"} className="font-semibold text-purple-700 hover:text-indigo-500">
                       Forgot password?
                     </Link>
                   </div>
@@ -117,7 +117,7 @@ export default function Signin() {
                     autoComplete="current-password"
                     onChange={(e) => setPassword(e.target.value)}
                     required
-                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+                    className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-purple-700 sm:text-sm sm:leading-6"
                   />
                 </div>
                 <ErrorMessage>{errors.password?.message}</ErrorMessage>
@@ -128,7 +128,7 @@ export default function Signin() {
                 type='submit'
                   
                   disabled={!email || !password}
-                  className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                  className="flex w-full justify-center rounded-md bg-purple-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-700"
                 >
                   Sign in
                 </button>
@@ -137,7 +137,7 @@ export default function Signin() {
 
             <p className="mt-10 text-center text-sm text-gray-500">
               Not a member?{' '}
-              <button onClick={() => router.push('signup')}  className="font-semibold leading-6 text-indigo-600 hover:text-indigo-500">
+              <button onClick={() => router.push('signup')}  className="font-semibold leading-6 text-purple-700 hover:text-indigo-500">
                 Sign Up
               </button>
             </p>

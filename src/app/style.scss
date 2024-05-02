@@ -14,6 +14,7 @@
         width: fit-content;
         padding: 0 1rem;
         box-sizing: border-box;
+        list-style: none;
         .nav-logo {
             display: flex;
             align-items: center;
@@ -30,7 +31,7 @@
         gap: 10px;
     
         box-sizing: border-box;
-        color: black;
+        color: white;
         a.btn {
             text-decoration: none;
             padding: 10px 14px;
@@ -40,11 +41,15 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border-radius: 8px;
+            border-radius: 5px;
             outline: none;
-            box-shadow: 0px 0px 1px 1px #808080;
+            box-shadow: 0px 0px 1px 1px #8080806b;
             font-weight: bold;
             white-space: nowrap;
+            &:last-child{
+                color: white;
+                box-shadow: 0px 0px 1px 1px rgb(126 34 206);
+            }
         }
         a.btn.btn-book {
             background: #673AB7;
@@ -65,24 +70,25 @@
     
 }
 .sidebar{
-display: none;
+display: none !important;
 }
   
 .landingpage {
-    width: 85%;
+    width: 90%;
     height: 100%;
-    box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.42);
+    box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
     box-sizing: border-box;
     display: flex;
     align-items: center;
     justify-content: center;
     border-radius: 50px;
     font-size: 16px;
+    margin: 0;
     .left-sec {
         width: 50%;
         height: 100%;
         background: rgb(202, 246, 255);
-        background: linear-gradient(90deg, rgba(202, 246, 255, 0.6727065826) 0%, rgba(190, 240, 250, 0.8099614846) 35%, rgba(202, 241, 249, 0.6895133053) 67%, rgba(218, 235, 238, 0.2838709677) 100%);
+        background: linear-gradient(90deg, rgba(202, 246, 255, 0.6727065826) 0%, rgba(190, 240, 250, 0.8099614846) 35%, rgba(202, 241, 249, 0.6895133053) 100%);
         display: flex;
         flex-direction: column;
         border-top-left-radius: 50px;
@@ -92,11 +98,12 @@ display: none;
         padding-top: 5%;
         box-sizing: border-box;
         span.tab {
-            padding: 0.6rem 1rem;
-            box-shadow: 0px 2px 6px 1px rgba(0, 0, 0, 0.411);
+            padding: 0.6rem .8rem;
+            box-shadow: 0px 2px 6px 0px rgba(17, 17, 17, 0.311);
             border-radius: 50px 50px;
             text-align: center;
             font-weight: bold;
+            font-size: .8em;
             width: -moz-fit-content;
             width: fit-content;
             background-color: white;
@@ -111,7 +118,7 @@ display: none;
             font-size: 1.1em;
         }
         .btn-imp {
-            background: black;
+            background: rgb(22, 21, 21);
             color: rgba(255, 255, 255, 0.822);
             font-weight: bold;
             width: -moz-fit-content;
@@ -222,7 +229,7 @@ display: none;
                     border-radius: 5px;
                     width: 60%;
                     height: 10%;
-                    background:#673AB7;
+                    background:rgb(126 34 206);
                     display: flex;
                     align-self: flex-end;
                     margin: .2rem;
@@ -250,9 +257,9 @@ display: none;
                 border-radius: 5px;
                 width: 60%;
                 height: 10%;
-                border: 1px solid #ff3f3f4f;
-                background: rgb(103,58,183);
-                background: linear-gradient(90deg, rgba(103,58,183,1) 0%, rgba(103,58,183,1) 34%, rgba(62,0,69,1) 100%);
+               
+                background: rgb(126 34 206);
+                
                 display: flex;
                 align-self: flex-end;
                 margin: .2rem;
@@ -351,7 +358,7 @@ display: none;
         }
     }
     .landingpage {
-        width: 100%;
+        width: 98%;
         height: 100%;
        
         font-size: 12px;
@@ -360,12 +367,13 @@ display: none;
         .left-sec {
             width: 100%;
             height: 50%;
-            background: rgb(202, 246, 255);
-            background: linear-gradient(90deg, rgba(202, 246, 255, 0.6727065826) 0%, rgba(190, 240, 250, 0.8099614846) 35%, rgba(202, 241, 249, 0.6895133053) 67%, rgba(218, 235, 238, 0.2838709677) 100%);
+            
+            
             display: flex;
             flex-direction: column;
             border-top-left-radius: 0px;
             border-bottom-left-radius: 50px;
+            border-bottom-right-radius: 50px;
             gap: 1rem;
             padding: 1rem;
             padding-top: 5%;
@@ -391,7 +399,7 @@ display: none;
                 font-size: .9em;
             }
             .btn-imp {
-                background: black;
+                background: rgb(22, 21, 21);
                 color: rgba(255, 255, 255, 0.822);
                 font-weight: bold;
                 width: -moz-fit-content;
@@ -410,7 +418,7 @@ display: none;
             box-sizing: border-box;
             border-top-right-radius: 50px;
             border-top-left-radius: 50px;
-            border-bottom-right-radius: 50px;
+            border-bottom-right-radius: 0px;
           
             img {
                 width: 100%;
@@ -419,7 +427,7 @@ display: none;
                 object-fit: cover;
                 border-top-right-radius: 50px;
                 border-top-left-radius: 50px;
-                border-bottom-right-radius: 50px;
+                border-bottom-right-radius: 0px;
             
             }
         }

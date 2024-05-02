@@ -30,11 +30,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       
-      <body className={`${inter.className} h-screen flex flex-col box-border`} style={{"border": "2px solid black", "padding": "0"}}>
+      <body className={`${inter.className} h-screen flex flex-col box-border`} >
         <SessionProvider>
           <DynamicComponent/>
          
-          <div style={{"height": "90%",  "width": "100%", "boxSizing": "border-box",  "padding": "1rem", "margin": "0", "position": "relative", "overflow":"hidden"}}>
+          <div style={{"height": "100%",  "width": "100%", "boxSizing": "border-box",  "padding": ".5rem", "margin": "0", "position": "relative", "overflow":"hidden"}}>
             <Sidebar/>
             {children}
           </div>

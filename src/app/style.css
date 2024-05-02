@@ -15,6 +15,7 @@
   width: fit-content;
   padding: 0 1rem;
   box-sizing: border-box;
+  list-style: none;
 }
 .navbar .nav-items .nav-logo {
   display: flex;
@@ -30,7 +31,7 @@
   padding: 10px;
   gap: 10px;
   box-sizing: border-box;
-  color: black;
+  color: white;
 }
 .navbar .action a.btn {
   text-decoration: none;
@@ -41,11 +42,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-radius: 8px;
+  border-radius: 5px;
   outline: none;
-  box-shadow: 0px 0px 1px 1px #808080;
+  box-shadow: 0px 0px 1px 1px rgba(128, 128, 128, 0.4196078431);
   font-weight: bold;
   white-space: nowrap;
+}
+.navbar .action a.btn:last-child {
+  color: white;
+  box-shadow: 0px 0px 1px 1px rgb(126, 34, 206);
 }
 .navbar .action a.btn.btn-book {
   background: #673AB7;
@@ -64,25 +69,26 @@
 }
 
 .sidebar {
-  display: none;
+  display: none !important;
 }
 
 .landingpage {
-  width: 85%;
+  width: 90%;
   height: 100%;
-  box-shadow: 0px 2px 15px 0px rgba(0, 0, 0, 0.42);
+  box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
   box-sizing: border-box;
   display: flex;
   align-items: center;
   justify-content: center;
   border-radius: 50px;
   font-size: 16px;
+  margin: 0;
 }
 .landingpage .left-sec {
   width: 50%;
   height: 100%;
   background: rgb(202, 246, 255);
-  background: linear-gradient(90deg, rgba(202, 246, 255, 0.6727065826) 0%, rgba(190, 240, 250, 0.8099614846) 35%, rgba(202, 241, 249, 0.6895133053) 67%, rgba(218, 235, 238, 0.2838709677) 100%);
+  background: linear-gradient(90deg, rgba(202, 246, 255, 0.6727065826) 0%, rgba(190, 240, 250, 0.8099614846) 35%, rgba(202, 241, 249, 0.6895133053) 100%);
   display: flex;
   flex-direction: column;
   border-top-left-radius: 50px;
@@ -93,11 +99,12 @@
   box-sizing: border-box;
 }
 .landingpage .left-sec span.tab {
-  padding: 0.6rem 1rem;
-  box-shadow: 0px 2px 6px 1px rgba(0, 0, 0, 0.411);
+  padding: 0.6rem 0.8rem;
+  box-shadow: 0px 2px 6px 0px rgba(17, 17, 17, 0.311);
   border-radius: 50px 50px;
   text-align: center;
   font-weight: bold;
+  font-size: 0.8em;
   width: -moz-fit-content;
   width: fit-content;
   background-color: white;
@@ -112,7 +119,7 @@
   font-size: 1.1em;
 }
 .landingpage .left-sec .btn-imp {
-  background: black;
+  background: rgb(22, 21, 21);
   color: rgba(255, 255, 255, 0.822);
   font-weight: bold;
   width: -moz-fit-content;
@@ -211,7 +218,7 @@
     border-radius: 5px;
     width: 60%;
     height: 10%;
-    background: #673AB7;
+    background: rgb(126, 34, 206);
     display: flex;
     align-self: flex-end;
     margin: 0.2rem;
@@ -234,9 +241,7 @@
     border-radius: 5px;
     width: 60%;
     height: 10%;
-    border: 1px solid rgba(255, 63, 63, 0.3098039216);
-    background: rgb(103, 58, 183);
-    background: linear-gradient(90deg, rgb(103, 58, 183) 0%, rgb(103, 58, 183) 34%, rgb(62, 0, 69) 100%);
+    background: rgb(126, 34, 206);
     display: flex;
     align-self: flex-end;
     margin: 0.2rem;
@@ -323,7 +328,7 @@
     box-sizing: border-box;
   }
   .landingpage {
-    width: 100%;
+    width: 98%;
     height: 100%;
     font-size: 12px;
     flex-direction: column-reverse;
@@ -332,12 +337,11 @@
   .landingpage .left-sec {
     width: 100%;
     height: 50%;
-    background: rgb(202, 246, 255);
-    background: linear-gradient(90deg, rgba(202, 246, 255, 0.6727065826) 0%, rgba(190, 240, 250, 0.8099614846) 35%, rgba(202, 241, 249, 0.6895133053) 67%, rgba(218, 235, 238, 0.2838709677) 100%);
     display: flex;
     flex-direction: column;
     border-top-left-radius: 0px;
     border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
     gap: 1rem;
     padding: 1rem;
     padding-top: 5%;
@@ -363,7 +367,7 @@
     font-size: 0.9em;
   }
   .landingpage .left-sec .btn-imp {
-    background: black;
+    background: rgb(22, 21, 21);
     color: rgba(255, 255, 255, 0.822);
     font-weight: bold;
     width: -moz-fit-content;
@@ -381,7 +385,7 @@
     box-sizing: border-box;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-bottom-right-radius: 0px;
   }
   .landingpage .right-sec img {
     width: 100%;
@@ -390,7 +394,7 @@
     object-fit: cover;
     border-top-right-radius: 50px;
     border-top-left-radius: 50px;
-    border-bottom-right-radius: 50px;
+    border-bottom-right-radius: 0px;
   }
   .recipe-container {
     border: none;
