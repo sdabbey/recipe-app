@@ -70,7 +70,7 @@
     
 }
 .sidebar{
-display: none !important;
+display: none;
 }
   
 .landingpage {
@@ -289,7 +289,7 @@ display: none !important;
         bottom: 0;
         right: -250px;
         background-color: #2d2d2d;
-        display: flex;
+        display: flex !important;
         flex-direction: column;
         align-items: center;
         padding: 2% 0 0 0;
