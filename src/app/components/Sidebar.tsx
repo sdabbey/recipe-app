@@ -23,7 +23,7 @@ const Sidebar = () => {
     const sidebar = document.getElementById("sidebar");
     if (navTrigger && sidebar) {
       const handleClick = () => {
-        
+      
         navTrigger.classList.toggle("active");
         sidebar.classList.toggle("active");
       };

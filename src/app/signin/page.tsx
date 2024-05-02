@@ -22,6 +22,17 @@ export default function Signin() {
   const {handleSubmit, formState: {errors}} = useForm<SignInForm>();
   const router = useRouter();
 
+  useEffect(() => {
+    // Check if there's a success message in the session storage
+    const storedSuccessMessage = sessionStorage.getItem('successMessage');
+    console.log(storedSuccessMessage)
+    if (storedSuccessMessage) {
+      
+      // Remove the success message from the session storage after reading it
+      sessionStorage.removeItem('successMessage');
+      setSuccess(storedSuccessMessage);
+    }
+  }, []);
   const SubmitForm = handleSubmit(async () => {
 
     
@@ -49,7 +60,8 @@ export default function Signin() {
     
     const clearErrorTimeout = setTimeout(() => {
       setError('');
-    }, 7000); 
+      setSuccess('')
+    }, 8000); 
     return () => {
       clearTimeout(clearErrorTimeout);
     };
@@ -104,7 +116,7 @@ export default function Signin() {
                     Password
                   </label>
                   <div className="text-sm">
-                    <Link href={"/forgot-password"} className="font-semibold text-purple-700 hover:text-indigo-500">
+                    <Link href={"/forgot-password"} className="font-semibold text-purple-700 hover:text-purple-500">
                       Forgot password?
                     </Link>
                   </div>
@@ -128,7 +140,7 @@ export default function Signin() {
                 type='submit'
                   
                   disabled={!email || !password}
-                  className="flex w-full justify-center rounded-md bg-purple-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-700"
+                  className="flex w-full justify-center cursor-pointer rounded-md bg-purple-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-purple-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-700"
                 >
                   Sign in
                 </button>
@@ -137,7 +149,7 @@ export default function Signin() {
 
             <p className="mt-10 text-center text-sm text-gray-500">
               Not a member?{' '}
-              <button onClick={() => router.push('signup')}  className="font-semibold leading-6 text-purple-700 hover:text-indigo-500">
+              <button onClick={() => router.push('signup')}  className="font-semibold leading-6 text-purple-700 hover:text-purple-500">
                 Sign Up
               </button>
             </p>

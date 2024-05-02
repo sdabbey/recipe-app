@@ -1,5 +1,5 @@
 'use client'
-import React, { use, useState } from 'react'
+import React, { use, useEffect, useState } from 'react'
 import Link from 'next/link'
 import { createUserWithEmailAndPassword, signInWithEmailAndPassword } from 'firebase/auth';
 import { auth } from '@/app/firebase';
@@ -37,19 +37,31 @@ const SignUpPage = () => {
       try {
         setSubmitting(true);
         const result = await createUserWithEmailAndPassword(auth, email, password);
-        console.log("User signed up successfully!");
-        setSuccess("User account created successfully")
+        
+       
+        sessionStorage.setItem('successMessage', 'User account created successfully. You can sign in now.');
+        console.log(sessionStorage.getItem('successMessage'))
         router.push('/signin');
         
       } catch (error) {
-        setError("Error creating account.");
+        setError("User already exist.");
         // Handle the error (e.g., display an error message to the user)
       } finally {
         setSubmitting(false)
       }
     });
 
-
+    //Add TImeout for Error Message
+  useEffect(() => {
+    
+    const clearErrorTimeout = setTimeout(() => {
+      setError('');
+    }, 5000); 
+    return () => {
+      clearTimeout(clearErrorTimeout);
+    };
+  }, [error]);
+  
   const handleFormSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
       signUp();
@@ -65,13 +77,15 @@ const SignUpPage = () => {
   </h2>
 </div>
 
-<div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-  {error && <div className="error-message fadeOut">
+<div className="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
+  <div className="error-messages h-14">
+  {error && <div className="error-message">
       <p>{error}</p>
     </div>}
   {success && <div className="success-message fadeOut">
       <p>{success}</p>
     </div>}
+  </div>
   <form className="space-y-6" onSubmit={handleFormSubmit}  method="POST">
     <div>
       <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
@@ -134,7 +148,7 @@ const SignUpPage = () => {
       <button
        
         disabled={!email || !password || !passwordAgain}
-        className="flex w-full justify-center rounded-md bg-purple-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-700"
+        className="flex w-full justify-center rounded-md bg-purple-700 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm cursor-pointer hover:bg-purple-600 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-purple-700"
       >
         Sign Up
       </button>
@@ -143,7 +157,7 @@ const SignUpPage = () => {
 
   <p className="mt-10 text-center text-sm text-gray-500">
     Already a member?{' '}
-    <button onClick={() => router.push('signin')}  className="font-semibold leading-6 text-purple-700 hover:text-indigo-500">
+    <button onClick={() => router.push('signin')}  className="font-semibold leading-6 text-purple-700 hover:text-purple-500">
       Log In
     </button>
   </p>

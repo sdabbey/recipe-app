@@ -1,6 +1,6 @@
 'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { Dancing_Script } from "next/font/google";
 import { usePathname } from 'next/navigation';
 import classNames from 'classnames';
@@ -20,9 +20,44 @@ const Navbar = () => {
     ]
     const currentPath = usePathname();
 
-   
+    useEffect(() => {
+    
+      const navTrigger = document.getElementById("nav-trigger");
+      const sidebar = document.getElementById("sidebar");
+      if (navTrigger && sidebar) {
+        const handleClick = () => {
+        
+          navTrigger.classList.toggle("active");
+          sidebar.classList.toggle("active");
+        };
+  
+        navTrigger.addEventListener("click", handleClick);
+  
+        return () => {
+          navTrigger.removeEventListener("click", handleClick);
+        };
+      }
+    }, [currentPath]);
 
-   
+    useEffect(() => {
+      const sidebarLinks = document.querySelectorAll("#sidebar a");
+      const handleLinkClick = () => {
+        const navTrigger = document.getElementById("nav-trigger");
+        const sidebar = document.getElementById("sidebar");
+        navTrigger?.classList.remove("active");
+        sidebar?.classList.remove("active");
+      };
+  
+      sidebarLinks.forEach((link) => {
+        link.addEventListener("click", handleLinkClick);
+      });
+  
+      return () => {
+        sidebarLinks.forEach((link) => {
+          link.removeEventListener("click", handleLinkClick);
+        });
+      };
+    }, [currentPath]);
   return (
    
 
@@ -49,8 +84,8 @@ const Navbar = () => {
              : 
              links.map(link => <Link key={link.href} className={classNames({
                  'hidden': link.href === currentPath,
-                 'btn first:bg-transparent first:text-purple-700 me-3 inline-block rounded bg-purple-700 px-6 pb-2 pt-2.5 text-xs font-medium uppercase leading-normal text-black shadow-primary-3 transition duration-150 ease-in-out hover:bg-purple-300 hover:shadow-primary-2 focus:bg-primary-accent-300 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-purple-600 active:shadow-primary-2 motion-reduce:transition-none': link.href !== currentPath,
-                 ' hover:scale-102 first:hover:bg-transparent transition-colors': true
+                 'btn me-3 inline-block rounded bg-purple-700 px-6 pb-2 pt-2.5 text-xs font-medium shadow-none uppercase leading-normal first:text-white transition duration-150 ease-in-out hover:bg-purple-500 focus:shadow-primary-2 focus:outline-none focus:ring-0 active:bg-purple-600 motion-reduce:transition-none': link.href !== currentPath,
+                 ' hover:scale-102 hover:bg-purple-500 transition-colors': true
              })} href={link.href}>{link.label}</Link>)}
               
         </div>

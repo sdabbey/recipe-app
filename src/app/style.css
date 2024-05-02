@@ -36,7 +36,6 @@
 .navbar .action a.btn {
   text-decoration: none;
   padding: 10px 14px;
-  color: black;
   background-blend-mode: normal;
   width: 6rem;
   display: flex;
@@ -176,15 +175,15 @@
 }
 
 .fadeOut {
-  animation: fadeOutAnimation 3s ease forwards;
+  animation: 3s fadeOutAnimation 8s ease forwards;
 }
 
 @keyframes fadeOutAnimation {
   from {
-    opacity: 1;
+    opacity: 0;
   }
   to {
-    opacity: 0;
+    opacity: 1;
     visibility: hidden;
   }
 }
