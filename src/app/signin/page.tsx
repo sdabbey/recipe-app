@@ -25,7 +25,7 @@ export default function Signin() {
   useEffect(() => {
     // Check if there's a success message in the session storage
     const storedSuccessMessage = sessionStorage.getItem('successMessage');
-    console.log(storedSuccessMessage)
+    
     if (storedSuccessMessage) {
       
       // Remove the success message from the session storage after reading it
@@ -44,7 +44,7 @@ export default function Signin() {
         setError('Invalid user details. Try again');
       } else {
         setSuccess("User SignIn successful")
-        router.push('/');
+        router.push('/recipes/');
       }
     } catch (error) {
       setError('Invalid user details. Try again')
