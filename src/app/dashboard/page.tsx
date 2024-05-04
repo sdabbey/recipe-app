@@ -17,13 +17,13 @@ const Dashboard = () => {
       if (sidemenu && btn) {
         const handleClick = () => {
         
-          sidemenu.classList.toggle("active");
+          sidemenu?.classList.toggle("active");
           
         };
   
         btn.addEventListener("click", handleClick);
         return () => {
-          btn.removeEventListener("click", handleClick);
+          btn?.removeEventListener("click", handleClick);
         };
       }
 
@@ -31,13 +31,13 @@ const Dashboard = () => {
       if (searchBtn && sidemenu) {
         const handleClick = () => {
         
-          sidemenu.classList.toggle("active");
+          sidemenu?.classList.toggle("active");
           
         };
   
         searchBtn.addEventListener("click", handleClick);
         return () => {
-          searchBtn.removeEventListener("click", handleClick);
+          searchBtn?.removeEventListener("click", handleClick);
         };
       }
       
