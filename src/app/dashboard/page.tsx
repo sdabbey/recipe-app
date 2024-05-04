@@ -6,7 +6,7 @@ import { CiMenuFries } from "react-icons/ci"
 import { dScript } from '../Navbar';
 import Layout from '../layout';
 import { signOut, useSession } from 'next-auth/react';
-const dashboard = () => {
+const Dashboard = () => {
 
     const session = useSession();
     useEffect(() => {
@@ -146,4 +146,4 @@ const dashboard = () => {
   )
 }
 
-export default dashboard
+export default Dashboard
