@@ -44,7 +44,7 @@ export default function Signin() {
         setError('Invalid user details. Try again');
       } else {
         setSuccess("User SignIn successful")
-        router.push('/recipes/');
+        router.push('/dashboard/');
       }
     } catch (error) {
       setError('Invalid user details. Try again')

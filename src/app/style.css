@@ -463,4 +463,352 @@
     min-height: 150px !important;
   }
 }
+/* Dashboard */
+.sidemenu {
+  position: fixed;
+  height: 90%;
+  width: 75px;
+  bottom: 0;
+  left: 0;
+  border-right: 1px solid rgba(126, 34, 206, 0.192);
+  background: #11101d;
+  padding: 6px 14px;
+  transition: all 0.5s ease;
+}
+.sidemenu.active {
+  width: 240px;
+}
+.sidemenu.active .logo_content .logo {
+  opacity: 1;
+  pointer-events: none;
+}
+.sidemenu.active #btn {
+  left: 90%;
+}
+.sidemenu.active ul li .tooltip {
+  display: none;
+}
+.sidemenu.active ul li input {
+  opacity: 1;
+}
+.sidemenu.active .links_name {
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidemenu.active .profile_content .profile {
+  background: none;
+}
+.sidemenu.active .profile_content .profile .profile_details {
+  opacity: 1;
+  pointer-events: auto;
+}
+.sidemenu.active .profile_content .profile #log_out {
+  left: 88%;
+  background: #1d1b31;
+}
+.sidemenu .logo_content {
+  height: 50px;
+}
+.sidemenu .logo_content .logo {
+  color: white;
+  display: flex;
+  height: 50px;
+  width: 100%;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease;
+}
+.sidemenu .logo_content .logo .logo-icon {
+  font-size: 28px;
+  margin-right: 5px;
+}
+.sidemenu .logo_content .logo .logo_name {
+  font-size: 20px;
+  font-weight: 400;
+  font-family: "Dancing Script", cursive;
+  letter-spacing: 0.03cm;
+}
+.sidemenu .logo_content .bx-menu {
+  font-size: 28px;
+}
+.sidemenu #btn {
+  position: absolute;
+  color: #fff;
+  left: 48%;
+  top: 6px;
+  font: size 20px;
+  height: 50px;
+  padding: 0.7rem;
+  width: 50px;
+  text-align: center;
+  line-height: 50px;
+  transform: translateX(-50%);
+}
+.sidemenu ul {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-sizing: border-box;
+}
+.sidemenu ul li {
+  position: relative;
+  list-style: none;
+  height: 45px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  list-style: none;
+  line-height: 45px;
+}
+.sidemenu ul li:hover .tooltip {
+  top: 50%;
+  opacity: 1;
+  transition: all 0.5s ease;
+}
+.sidemenu ul li .tooltip {
+  position: absolute;
+  left: 122px;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  height: 35px;
+  width: 122px;
+  background: #fff;
+  border-radius: 6px;
+  line-height: 35px;
+  text-align: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  transition: 0s;
+  opacity: 0;
+  pointer-events: none;
+}
+.sidemenu ul li form {
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+}
+.sidemenu ul li form input {
+  height: 100;
+  width: 100%;
+  left: 0;
+  top: 0;
+  border-radius: 5px;
+  outline: none;
+  border: none;
+  background: #1d1b31;
+  padding: 0.8rem 1rem;
+  padding-left: 46px;
+  font-size: 14px;
+  color: #fff;
+  opacity: 0;
+  font-weight: 400;
+}
+.sidemenu ul li form #search-btn {
+  width: -moz-fit-content;
+  width: fit-content;
+  position: absolute;
+  z-index: 99;
+  color: #fff;
+  box-sizing: border-box;
+  margin-left: 0;
+  transition: all 0.5 ease;
+}
+.sidemenu ul li form #search-btn:hover {
+  background-color: #fff;
+  color: #1d1b31;
+}
+.sidemenu ul li a {
+  color: #fff;
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  border-radius: 5px;
+  white-space: nowrap;
+  font-size: 14px;
+  height: 100%;
+}
+.sidemenu ul li a:hover {
+  color: #11101d;
+  background: white;
+}
+.sidemenu ul li .sidemenu-icon {
+  height: 45px;
+  min-width: 48px;
+  width: -moz-fit-content;
+  width: fit-content;
+  border-radius: 5px;
+  line-height: 45px;
+  text-align: center;
+  font-size: 14px;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0.8rem;
+}
+.sidemenu .links_name {
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.3s ease;
+}
+.sidemenu .profile_content {
+  position: absolute;
+  color: #fff;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+}
+.sidemenu .profile_content .profile {
+  position: relative;
+  padding: 10px 6px;
+  height: 60px;
+  background: #1d1b31;
+  transition: all 0.5s ease;
+}
+.sidemenu .profile_content .profile .profile_details {
+  display: flex;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none;
+  white-space: nowrap;
+}
+.sidemenu .profile_content .profile .profile_details img {
+  height: 45px;
+  width: 45px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  border-radius: 10px;
+}
+.sidemenu .profile_content .profile .profile_details .name_job {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+.sidemenu .profile_content .profile .profile_details .name {
+  font-size: 15px;
+  font-weight: 400;
+}
+.sidemenu .profile_content .profile .profile_details .job {
+  font-size: 10px;
+}
+.sidemenu .profile_content .profile #log_out {
+  position: absolute;
+  bottom: 5px;
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 45px;
+  height: 45px;
+  text-decoration: none;
+  font-size: 20px;
+  border-radius: 10px;
+  text-align: center;
+  transition: all 0.5s ease;
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-page {
+  position: absolute;
+  height: 90vh;
+  bottom: 0;
+  width: calc(100% - 75px);
+  left: 75px;
+  transition: all 0.5s ease;
+  background: #11101d;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5%;
+  box-sizing: border-box;
+}
+.main-page h1.logo {
+  padding: 0rem;
+  height: 30%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 80px;
+  font-weight: 700;
+  text-align: center;
+  margin-top: 3%;
+}
+.main-page h1.logo .logo-icon {
+  font-size: 44px;
+  width: 100%;
+}
+.main-page .btn-tabs-container {
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 3rem 5rem;
+  padding: 0.5rem 3rem;
+}
+.main-page .btn-tabs-container li {
+  list-style: none;
+  width: 20rem;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.main-page .btn-tabs-container li a {
+  width: 100%;
+  text-decoration: none;
+  padding: 1.3rem 2rem;
+  display: flex;
+  font-weight: 900;
+  align-items: center;
+  justify-content: space-between;
+  height: -moz-fit-content;
+  height: fit-content;
+  font-size: 16px;
+  border-radius: 5px;
+  background: #d3d3d3;
+  color: #11101d;
+}
+.main-page .btn-tabs-container li a .tab-icon {
+  font-size: 18px;
+  color: rgb(126, 34, 206);
+  font-weight: bold;
+}
+
+.sidemenu.active ~ .main-page {
+  width: calc(100% - 240px);
+  left: 240px;
+}
+
+@media screen and (max-width: 1024px) {
+  .sidemenu {
+    display: none;
+  }
+  .main-page {
+    width: 100% !important;
+    margin-left: 0 !important;
+    left: 0;
+    padding: 0;
+  }
+  .main-page h1.logo {
+    font-size: 5rem;
+    height: -moz-fit-content;
+    height: fit-content;
+    margin-top: 5%;
+  }
+  .main-page .btn-tabs-container {
+    gap: 2rem;
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .main-page .btn-tabs-container li {
+    width: 90%;
+  }
+}
 /*# sourceMappingURL=style.css.map */
