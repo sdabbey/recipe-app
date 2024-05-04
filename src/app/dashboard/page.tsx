@@ -4,7 +4,11 @@ import { GiChickenOven } from "react-icons/gi";
 import { BiBookOpen, BiHeart, BiHome, BiLogOut, BiPlus, BiSearch, BiTime, BiUser } from "react-icons/bi";
 import { CiMenuFries } from "react-icons/ci"
 import { dScript } from '../Navbar';
+import Layout from '../layout';
+import { signOut, useSession } from 'next-auth/react';
 const dashboard = () => {
+
+    const session = useSession();
     useEffect(() => {
       let btn = document.querySelector('#btn');
       let sidemenu = document.getElementById('sidemenu');
@@ -45,7 +49,8 @@ const dashboard = () => {
         
     
   return (
-    <>
+    <Layout showNavbar={false}>
+      <>
       <div className="sidemenu" id='sidemenu'>
         <div className="logo_content">
             {/* <div className="logo">
@@ -53,12 +58,12 @@ const dashboard = () => {
                 <div className="logo_name">FlavourFuse</div>
             </div> */}
 
-            <CiMenuFries id='btn' color='white' />
+            <CiMenuFries id='btn' />
         </div>
         <ul className="nav_list">
             <li>
                 <form>
-                    <BiSearch id='search-btn' className='sidemenu-icon' color='white' />
+                    <BiSearch id='search-btn' className='sidemenu-icon' />
                     <input type="text" placeholder="Search..." />
                 </form>
                 <span className="tooltip">Search</span>
@@ -104,38 +109,40 @@ const dashboard = () => {
                             Yung Hydrus
                         </div>
                         <div className="job">
-                            dehydrus223@gmail.com
+                            {session?.data?.user?.email}
                         </div>
                         
                     </div>
                     
                 </div>
-                <a href="#" id="log_out"><BiLogOut className='sidemenu-icon' /></a>
+                <button onClick={() => signOut()} id="log_out"><BiLogOut className='sidemenu-icon' /></button>
             </div>
         </div>
-    </div>
-    <div className="main-page">
-        <h1 className={`logo text-purple-700 ${dScript.className}`}><GiChickenOven className='logo-icon'/>FlavourFuse</h1>
-        <ul className="btn-tabs-container">
-            <li>
-                <a href="#" className="btn">Add Recipe <BiPlus className="tab-icon"/></a>
-            </li>
-            <li>
-                <a href="#" className="btn">My Recipes <BiBookOpen className="tab-icon"/></a>
-            </li>
-            <li>
-                <a href="#" className="btn">Search <BiSearch className="tab-icon"/></a>
-            </li>
-            <li>
-                <a href="#" className="btn">Favourites <BiHeart className="tab-icon"/></a>
-            </li>
-            <li>
-                <a href="#" className="btn">Recent Recipes <BiTime className="tab-icon"/></a>
-            </li>
+      </div>
+      <div className="main-page">
+          <h1 className={`logo text-purple-700 ${dScript.className}`}><GiChickenOven className='logo-icon'/>FlavourFuse</h1>
+          <ul className="btn-tabs-container">
+              <li>
+                  <a href="#" className="btn">Add Recipe <BiPlus className="tab-icon"/></a>
+              </li>
+              <li>
+                  <a href="#" className="btn">My Recipes <BiBookOpen className="tab-icon"/></a>
+              </li>
+              <li>
+                  <a href="#" className="btn">Search <BiSearch className="tab-icon"/></a>
+              </li>
+              <li>
+                  <a href="#" className="btn">Favourites <BiHeart className="tab-icon"/></a>
+              </li>
+              <li>
+                  <a href="#" className="btn">Recent Recipes <BiTime className="tab-icon"/></a>
+              </li>
 
-        </ul>
-    </div>
-    </>
+          </ul>
+      </div>
+      </>
+    </Layout>
+   
   )
 }
 

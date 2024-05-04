@@ -1,3 +1,8 @@
+:root {
+    --main-page-bg: white;
+    --main-page-accent: rgb(126 34 206);
+ 
+}
 .navbar {
     width: 100%;
     height: 62px;
@@ -509,14 +514,21 @@ display: none;
   
 
 /* Dashboard */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --main-page-bg: #11101d;
+        --main-page-accent: rgb(126 34 206);
+     
+    }
+  }
 .sidemenu{
     position:fixed;
-    height: 90%;
+    height: 100%;
     width:75px;
     bottom: 0;
     left: 0;
     border-right: 1px solid rgba(126, 34, 206, 0.192);
-    background: #11101d;
+    background: var(--main-page-bg);
     padding:6px 14px;
     transition:all 0.5s ease;
     &.active{
@@ -534,6 +546,9 @@ display: none;
             }
             input{
                 opacity: 1;
+            }
+            #search-btn{
+                color: var(--main-page-bg);
             }
             
         }
@@ -557,7 +572,7 @@ display: none;
     .logo_content{
         height: 50px;
         .logo{
-            color: white;
+            color: var(--main-page-accent);
             display:flex;
             height: 50px;
             width:100%;
@@ -584,7 +599,7 @@ display: none;
 
     #btn{
         position:absolute;
-        color: #fff;
+        color: var(--main-page-accent);
         left: 48%;
         top: 6px;
         font: size 20px;
@@ -631,6 +646,7 @@ display: none;
                 box-shadow: 0 5px 10px rgba(0,0,0,0.2);
                 transition:0s;
                 opacity: 0;
+                color: var(--main-page-accent);
                 pointer-events: none;
             }
             form{
@@ -651,7 +667,7 @@ display: none;
                     padding: .8rem 1rem;
                     padding-left: 46px;
                     font-size:14px;
-                    color: #fff;
+                    color: var(--main-page-bg);
                     opacity: 0;
                     font-weight: 400;
                
@@ -660,22 +676,22 @@ display: none;
                 width: fit-content;
                 position: absolute;
                 z-index: 99;
-                color: #fff;
+                color: var(--main-page-accent);
                 box-sizing: border-box;
                 
                 margin-left: 0;
                 
                 transition: all 0.5 ease;
                 &:hover{
-                    background-color: #fff;
-                    color: #1d1b31;
+                    background-color: var(--main-page-accent);
+                    color: var(--main-page-bg);
                 } 
                 
             }
             }
 
             a{
-                color: #fff;
+                color: var(--main-page-accent);
                 display:flex;
                 align-items: center;
                 text-decoration: none;
@@ -685,9 +701,10 @@ display: none;
                 font-size: 14px;
                 height: 100%;
                 &:hover{
-                    color: #11101d;
-                    background:white;
+                    color: var(--main-page-bg);
+                    background:var(--main-page-accent);
                 }
+               
             }
 
             .sidemenu-icon{
@@ -712,7 +729,7 @@ display: none;
     }
     .profile_content{
         position:absolute;
-        color:#fff;
+        color:var(--main-page-accent);
         bottom: 0;
         left: 0;
         width: 100%;
@@ -764,19 +781,19 @@ display: none;
                 display: flex;
                 align-items: center;
                 justify-content: center;
-                
+                color: white;
             }
         }
     }
 }
 .main-page{
     position: absolute;
-    height: 90vh;
+    height: 100vh;
     bottom:0;
     width: calc(100% - 75px);
     left: 75px;
     transition: all 0.5s ease;
-    background: #11101d;
+    background: var(--main-page-bg);
     margin: 0;
     display: flex;
     flex-direction: column;
@@ -822,7 +839,7 @@ display: none;
                 text-decoration: none;
                 padding: 1.3rem 2rem;
                 display: flex;
-                font-weight: 900;
+                font-weight: 600;
                 align-items: center;
                 justify-content: space-between;
                 height: fit-content;
@@ -832,7 +849,7 @@ display: none;
                 color: #11101d;
                 .tab-icon{
                     font-size: 18px;
-                    color: rgb(126 34 206);
+                    color: var(--main-page-accent);
                     font-weight: bold;
                 }
             }
