@@ -38,14 +38,14 @@ export default function RecipesPage() {
       }, [])
      
   return (
-    <main className="recipe-container flex flex-col items-center justify-start gap-5 p-24 pb-0 pt-5 border-2" style={{ "height": "100%" }}>
+    <main className="recipe-container flex flex-col items-center justify-start gap-5 p-24 pb-0 pt-5 border-2" style={{ "height": "100%", "border": "1px solid red" }}>
       <div className="recipe-header flex justify-between items-center p-3 w-full h-1/5 border-2" style={{ "height": "15%" }}>
         <h4>Recipes List</h4>
-        {(session.data?.user) ? <Link className="bg-orange-600 rounded text-white p-2" href={"/recipes/create"}>Add new Recipe</Link> : null}
+        {(session.data?.user) ? <Link className="bg-purple-600 rounded text-white p-2" href={"/recipes/create"}>Add new Recipe</Link> : null}
 
 
       </div>
-      <div className="recipe-wrapper flex w-full border-2 items-start" style={{ "height": "85%" }}>
+      <div className="recipe-wrapper flex w-full items-start justify-around flex-wrap gap-2" style={{ "height": "85%" }}>
         {recipesList.map(item => {
           return (item.imageUrl) ? <RecipeCard description={""} key={item.id} {...item}></RecipeCard> : null;
         })}

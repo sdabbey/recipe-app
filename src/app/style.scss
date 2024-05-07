@@ -160,13 +160,79 @@ display: none;
 
     
     .recipe{
-        
+        width: calc(100% / 4.2);
         box-sizing: border-box;
         .recipe-card{
-            width: 280px;
-            height: 350px;
+            width: 100%;
+            height: 270px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            box-sizing: border-box;
             
-            
+            border-radius: 10px;
+            .card-icons{
+                color: rgb(126, 34, 206);
+            }
+            .image-box{
+                width: 93%;
+                height: 150px;
+                box-sizing: border-box;
+                box-shadow: 0px 0px 5px 0px #11101d5d;
+                border-radius: 10px;
+                position: absolute;
+                top: 3%;
+                img{
+                    width:100%;
+                    height: 100%;
+                    object-fit: cover;
+                    border-radius: 10px;
+                }
+            }
+            .card-content{
+                width: 100%;
+                height: 100%;
+                padding: .5rem;
+                border-radius: 10px;
+                margin-top: auto;
+                display: flex;
+                flex-direction: column;
+                gap: .5rem;
+                justify-content: flex-end;
+                background: rgba(126, 34, 206, 0.082);
+                box-shadow: 0px 0px 3px 0px #11101d3d;
+                
+                .recipe-title{
+                    font-size: 1.2rem;
+                    margin: 0;
+                    font-weight: bold;
+                    font-family: "Open Sans";
+                }
+                .more-details{
+                    display: flex;
+                    align-items: center;
+                    gap: 15px;
+                    .serves,.cook-time,.ratings{
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                    }
+        
+                }
+                .meal-type-tags{
+                    width: 100%;
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    span{
+                        border: 1px solid #11101d86;
+                        padding: .2rem .6rem;
+                        border-radius: 15px;
+                        font-size: .9em;
+                    }
+                }
+            }
         }
     }
 }
@@ -444,39 +510,98 @@ display: none;
             border: 1px solid rgba(0, 0, 0, 0.048);
         }
         .recipe-wrapper{
-            padding: .3rem;
-            border: 1px solid rgba(0, 0, 0, 0.048);
+            padding: .5rem;
             
-            justify-content: space-around;
+            overflow-y: scroll;
+            display: flex;
+            align-items: flex-end;
+            justify-content: flex-end;
             flex-wrap: wrap;
             .recipe{
             
-                width: calc(100% / 2.1);
-                height: 180px;
+                width: 97%;
+                height: 110px;
                 box-sizing: border-box;
                 padding: 0;
                 
                 .recipe-card{
                     width: 100%;
                     height: 100%;
-                    box-shadow: 0px 0px 5px 2px rgba(0, 0, 0, 0.096);
-                    margin: 0;
+                    display: flex;
+                    flex-direction: row;
+                    align-items: center;
+                    justify-content: center;
+                    background: rgba(126, 34, 206, 0.123);
+                    position: relative;
+                    box-sizing: border-box;
+                    padding: 0;
+                    border-radius: 10px;
+                    .card-icons{
+                        color: rgb(126, 34, 206);
+                    }
                     .image-box{
-                        width: 100%;
-                        height: 60%;
+                        width: 10rem;
+                        top: 0;
+                        margin-left: -7%;
+                        padding: .5rem;
+                        height: 100%;
+                        object-fit: cover;
+                        box-sizing: border-box;
+                        box-shadow: none;
+                        border-radius: 10px;
+                        position: relative;
+                       
                         img{
+                            width:100%;
                             height: 100%;
-                            width: 100%;
-                            
+                            border-radius: 10px;
                         }
                     }
                     .card-content{
-                        padding: .2rem .4rem;
-                        height: 40%;
-                        
-                        h3{
-                            font-size: .9em;
-                            margin: 0;
+                        width: 100%;
+                        height: 100%;
+                        padding: .5rem;
+                        border-radius: 10px;
+                        margin-top: auto;
+                        display: flex;
+                        flex-direction: column;
+                        gap: .5rem;
+                        justify-content: flex-end;
+                        background: transparent;
+                        box-shadow: none;
+                        box-sizing: border-box;
+                       
+                        .recipe-title{
+                            font-size: 1.1em;
+                            
+                            font-weight: bold;
+                            font-family: "Open Sans";
+                        }
+                        .more-details{
+                            display: flex;
+                            align-items: center;
+                            gap: 15px;
+                            
+                            .serves,.cook-time,.ratings{
+                                display: flex;
+                                align-items: center;
+                                gap: 5px;
+                                font-size:.8em;
+                            }
+                
+                        }
+                        .meal-type-tags{
+                            width: 100%;
+                            display: flex;
+                            align-items: center;
+                            gap: 8px;
+                            
+                            span{
+                                border: 1px solid #11101d86;
+                                padding: .2rem .6rem;
+                                border-radius: 15px;
+                                font-size: .7em;
+                            }
                         }
                     }
                 }
@@ -873,17 +998,17 @@ display: none;
         left: 0;
         padding: 0;
         h1.logo{
-            font-size: 5rem;
+            font-size: 4rem;
             
             height: fit-content;
-            margin-top: 5%;
+            margin-top: 2%;
         }
         .btn-tabs-container{
             
-            gap: 2rem;
+            gap: 1.5rem;
             height: fit-content;
             li{
-                width: 90%;
+                width: 95%;
             }
         }
     }
