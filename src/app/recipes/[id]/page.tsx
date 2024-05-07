@@ -7,7 +7,7 @@ import { useRouter } from 'next/navigation';
 import Image from 'next/image';
 import SimpleMDE from "react-simplemde-editor";
 import "easymde/dist/easymde.min.css";
-
+import "@/app/style.css"
 import { ref } from 'firebase/storage';
 import { PiBowlFood, PiHeart, PiShare, PiStar, PiTimer, PiTrash } from 'react-icons/pi';
 import { FaRegEdit } from "react-icons/fa";

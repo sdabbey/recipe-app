@@ -237,6 +237,40 @@ display: none;
     }
 }
 
+.recipe-update-container{
+    
+    height: 100%;
+    
+    font-size: .8em;
+    form{
+        overflow-y: scroll;
+        &::-webkit-scrollbar{
+        
+            background-color: transparent;
+        }
+        input, textarea{
+            font-size: 1em;
+        }
+    }
+    .EasyMDEContainer{
+        height: fit-content;
+        .CodeMirror{
+            min-height: 80px;
+            height: min-content;
+            .CodeMirror-scroll{
+                min-height: 120px !important; 
+            }
+        }
+    }
+    .update-action{
+        display: flex;
+        .update-action-btn{
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+}
 .recipe-detail-container{
     display: flex;
     width: 100%;
@@ -849,6 +883,46 @@ display: none;
                     .CodeMirror-scroll{
                         min-height: 150px !important; 
                     }
+                }
+            }
+        }
+    }
+
+    .recipe-update-container{
+        padding-top: 0;
+
+        width: 100%;
+        height: 100%;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        scroll-behavior: smooth;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+
+        form{
+           
+            height: fit-content;
+            .EasyMDEContainer{
+                height: fit-content;
+                .CodeMirror{
+                    min-height: 80px;
+                    height: min-content;
+                    .CodeMirror-scroll{
+                        min-height: 150px !important; 
+                    }
+                }
+            }
+            .update-action{
+                display: flex;
+                align-items: center;
+                gap: .7rem;
+                margin-top: 2%;
+                padding: .5rem;
+                .update-action-btn{
+                    display: flex;
+                    gap:10px;
+                    width: fit-content;
                 }
             }
         }

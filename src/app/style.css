@@ -230,6 +230,40 @@
   font-size: 0.9em;
 }
 
+.recipe-update-container {
+  height: 100%;
+  font-size: 0.8em;
+}
+.recipe-update-container form {
+  overflow-y: scroll;
+}
+.recipe-update-container form::-webkit-scrollbar {
+  background-color: transparent;
+}
+.recipe-update-container form input, .recipe-update-container form textarea {
+  font-size: 1em;
+}
+.recipe-update-container .EasyMDEContainer {
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.recipe-update-container .EasyMDEContainer .CodeMirror {
+  min-height: 80px;
+  height: -moz-min-content;
+  height: min-content;
+}
+.recipe-update-container .EasyMDEContainer .CodeMirror .CodeMirror-scroll {
+  min-height: 120px !important;
+}
+.recipe-update-container .update-action {
+  display: flex;
+}
+.recipe-update-container .update-action .update-action-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
 .recipe-detail-container {
   display: flex;
   width: 100%;
@@ -789,6 +823,46 @@
   }
   .recipe-create-container form .EasyMDEContainer .CodeMirror .CodeMirror-scroll {
     min-height: 150px !important;
+  }
+  .recipe-update-container {
+    padding-top: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    scroll-behavior: smooth;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .recipe-update-container form {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .recipe-update-container form .EasyMDEContainer {
+    height: -moz-fit-content;
+    height: fit-content;
+  }
+  .recipe-update-container form .EasyMDEContainer .CodeMirror {
+    min-height: 80px;
+    height: -moz-min-content;
+    height: min-content;
+  }
+  .recipe-update-container form .EasyMDEContainer .CodeMirror .CodeMirror-scroll {
+    min-height: 150px !important;
+  }
+  .recipe-update-container form .update-action {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    margin-top: 2%;
+    padding: 0.5rem;
+  }
+  .recipe-update-container form .update-action .update-action-btn {
+    display: flex;
+    gap: 10px;
+    width: -moz-fit-content;
+    width: fit-content;
   }
   .recipe-detail-container {
     display: flex;

@@ -183,7 +183,7 @@ const CreateRecipe = () => {
                     <input type="file" required  onChange={handleImageUpload}/>
                 </div>
 
-                <button type='submit' className='bg-orange-600 p-3 rounded text-white'>Submit</button>
+                <button type='submit' className='bg-purple-700 p-3 rounded text-white'>Submit</button>
             </form> 
         </div>
     )
