@@ -13,6 +13,7 @@ interface RecipeCardProps {
     imageUrl: string;
     title: string;
     description: string;
+    userEmail: string;
   }
   
 const RecipeCard: React.FC<RecipeCardProps> = (props) => {
@@ -46,9 +47,10 @@ const RecipeCard: React.FC<RecipeCardProps> = (props) => {
                     </p>
                 </div>
                 <div className="meal-type-tags">
-                    <span>Appetizers</span>
+                    {/* <span>Appetizers</span>
                     <span>Dinner</span>
-                    <span>Lunch</span>
+                    <span>Lunch</span> */}
+                    <p className='text-purple-700'>{props.userEmail}</p>
     
                 </div>
             </div>

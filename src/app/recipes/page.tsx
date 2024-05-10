@@ -16,6 +16,7 @@ interface Recipe {
   ingredients: string;
   instructions: string;
   cookTime: number;
+  userEmail: string;
 }
 export default function RecipesPage() {
     const session = useSession()

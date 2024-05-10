@@ -60,6 +60,7 @@ const CreateRecipe = () => {
             console.log(currentUser)
             if(currentUser){
                 const userId = currentUser.uid;
+                const userEmail = currentUser.email;
                 uploadTask.on(
                     "state_changed",
                     (snapshot) => {
@@ -99,7 +100,8 @@ const CreateRecipe = () => {
                                     instructions: instructions,
                                     cookTime: cookTime,
                                     imageUrl: downloadURL,
-                                    userId: userId
+                                    userId: userId,
+                                    userEmail: userEmail
                                 })
             
                             
@@ -129,32 +131,32 @@ const CreateRecipe = () => {
 
 
     return (
-        <div className='recipe-create-container flex items-center justify-center pt-20'>
+        <div className='recipe-create-container flex items-center justify-center pt-4'>
            <form onSubmit={handleSubmit} className='p-2 flex  lg:w-1/3 w-full box-border flex-col'>
             <h1 className="mb-3 text-center font-bold w-full box-border">Create Recipe</h1>
                 <div className='mb-3 w-full box-border '>
                     <input
-                        className='w-full p-2 rounded'
+                        className='w-full p-2 rounded focus:border-purple-700 focus:shadow-none focus:outline-none'
                         type="text" value={title} 
                         onChange={e => setTitle(e.target.value)}
                         placeholder='title' 
                         required
-                        style={{"border": "1px solid grey"}}
+                        
                     />
                 </div>
                 <div className='mb-3 w-full box-border '>
                     <textarea
-                        className='w-full p-2 rounded'
+                        className='w-full p-2 rounded focus:border-purple-700 focus:shadow-none focus:outline-none'
                         value={ingredients} 
                         onChange={e => setIngredients(e.target.value)}
                         placeholder='ingredients'
                         rows={5}
                         required 
-                        style={{"border": "1px solid grey"}}
+                        
                     ></textarea>
                 </div>
                <SimpleMDE  value={instructions} 
-                
+                    
                     onChange={(newValue) => setInstructions(newValue)}
                     placeholder='Instructions'
                     />
@@ -171,12 +173,12 @@ const CreateRecipe = () => {
                 </div> */}
                 <div className='mb-3 w-full box-border'>
                     <input
-                        className='w-full p-2 rounded'
+                        className='w-full p-2 rounded focus:border-purple-700 focus:shadow-none focus:outline-none'
                         type="number" value={cookTime} 
                         onChange={e => setcookTime(parseInt(e.target.value))}
                         placeholder='Cook Time (minutes)' 
                         required
-                        style={{"border": "1px solid grey"}}
+                        
                     />
                 </div>
                 <div className='mb-3 w-full box-border '>
