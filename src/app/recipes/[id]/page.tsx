@@ -24,6 +24,7 @@ const RecipeDetail = ({params}: {params: {id: string}}) => {
     const [cookTime, setcookTime] = useState("");
     const [file, setFile] = useState("")
     const [userId, setuserId] = useState("")
+    const [userEmail, setuserEmail] = useState("")
     const session  = useSession();
     
     useEffect(() => {
@@ -40,6 +41,7 @@ const RecipeDetail = ({params}: {params: {id: string}}) => {
                     setcookTime(data.cookTime ?? 0);
                     setFile(data.imageUrl ?? null);
                     setuserId(data.userId);
+                    setuserEmail(data.userEmail);
                 }
                 
             } catch (error) {
@@ -86,8 +88,13 @@ const RecipeDetail = ({params}: {params: {id: string}}) => {
         {session.data?.user ? <div className="action-section">
             <a href="#"><PiStar className='action-icon'/>Rate</a>
             <a href="#"><PiShare className='action-icon'/>Share</a>
-            <Link href={"/recipes/" + (params.id) + "/update"}><FaRegEdit className='action-icon'/>Edit</Link>
-            <button onClick={handleDelete}><PiTrash className='action-icon'/>Delete</button>
+            
+            {session.data.user.email == userEmail ? 
+            <>
+                <Link href={"/recipes/" + (params.id) + "/update"}><FaRegEdit className='action-icon'/>Edit</Link>
+                <button onClick={handleDelete}><PiTrash className='action-icon'/>Delete</button>
+            </>
+            : null}
         </div> : null}
        
         <div className="more-details">

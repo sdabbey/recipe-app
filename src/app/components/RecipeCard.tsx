@@ -1,8 +1,8 @@
 import Image from 'next/image'
 import Link from 'next/link'
 import React from 'react'
-import { PiBowlFood, PiHeart, PiStar, PiTimer, PiTimerFill } from "react-icons/pi";
-
+import { PiBowlFood, PiStar, PiTimer } from "react-icons/pi";
+import { LuChefHat } from "react-icons/lu";
 import '@/app/style.css'
 
 
@@ -50,7 +50,8 @@ const RecipeCard: React.FC<RecipeCardProps> = (props) => {
                     {/* <span>Appetizers</span>
                     <span>Dinner</span>
                     <span>Lunch</span> */}
-                    <p className='text-purple-700'>{props.userEmail}</p>
+                    <LuChefHat className='card-icons'/>
+                    <p>{props.userEmail}</p>
     
                 </div>
             </div>
