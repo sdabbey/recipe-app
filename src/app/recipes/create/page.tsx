@@ -156,7 +156,7 @@ const CreateRecipe = () => {
                     ></textarea>
                 </div>
                <SimpleMDE  value={instructions} 
-                    className='dark:placeholder:text-color: purple-500'
+                    className='dark:placeholder:text-purple-500'
                     onChange={(newValue) => setInstructions(newValue)}
                     placeholder='Instructions'
                     />

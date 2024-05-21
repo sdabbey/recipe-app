@@ -18,7 +18,6 @@
   align-items: center;
   justify-content: space-between;
   color: var(--main-page-accent);
-  font-family: "Open Sans";
   box-sizing: border-box;
   background: var(--main-page-bg);
 }
@@ -219,7 +218,6 @@
   font-size: 1.2rem;
   margin: 0;
   font-weight: bold;
-  font-family: "Open Sans";
 }
 .recipe-container .recipe .recipe-card .card-content .more-details {
   display: flex;
@@ -257,6 +255,9 @@
 }
 .recipe-create-container input, .recipe-create-container textarea {
   border: 1px solid grey;
+}
+.recipe-create-container .editor-toolbar {
+  color: var(--recipe-accent);
 }
 
 .recipe-update-container {
@@ -379,7 +380,6 @@
 .recipe-detail-container .recipe-first-sec .card-content .recipe-title {
   font-size: 2rem;
   font-weight: bold;
-  font-family: "Open Sans";
   margin: 0;
 }
 .recipe-detail-container .recipe-first-sec .card-content .more-details {
@@ -803,7 +803,6 @@
   .recipe-container .recipe-wrapper .recipe .recipe-card .card-content .recipe-title {
     font-size: 1.1em;
     font-weight: bold;
-    font-family: "Open Sans";
   }
   .recipe-container .recipe-wrapper .recipe .recipe-card .card-content .more-details {
     display: flex;
@@ -830,7 +829,6 @@
   }
   .recipe-create-container {
     padding-top: 0;
-    border: 1px solid red;
     width: 100%;
     height: 100%;
     overflow-x: hidden;
@@ -961,7 +959,6 @@
     font-size: 1.8rem;
     font-weight: bold;
     text-align: center;
-    font-family: "Open Sans";
     margin: 0;
     padding: 0.5rem;
     box-sizing: border-box;

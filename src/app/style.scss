@@ -18,7 +18,7 @@
     align-items: center;
     justify-content: space-between;
     color: var(--main-page-accent);
-    font-family: "Open Sans";
+    
     box-sizing: border-box;
     background: var(--main-page-bg);
     .nav-items{
@@ -218,7 +218,7 @@ display: none;
                     font-size: 1.2rem;
                     margin: 0;
                     font-weight: bold;
-                    font-family: "Open Sans";
+                    
                 }
                 .more-details{
                     display: flex;
@@ -260,6 +260,9 @@ display: none;
     justify-content: flex-start;
     input, textarea{
         border: 1px solid grey;
+    }
+    .editor-toolbar{
+        color: var(--recipe-accent);
     }
 
 }
@@ -382,7 +385,7 @@ display: none;
                 font-size: 2rem;
                 font-weight: bold;
                
-                font-family: "Open Sans";
+                
                 margin: 0;
             }
             .more-details{
@@ -853,7 +856,7 @@ display: none;
                             font-size: 1.1em;
                             
                             font-weight: bold;
-                            font-family: "Open Sans";
+                            
                         }
                         .more-details{
                             display: flex;
@@ -890,7 +893,7 @@ display: none;
 
     .recipe-create-container{
         padding-top: 0;
-        border: 1px solid red;
+        
         width: 100%;
         height: 100%;
         overflow-x: hidden;
@@ -1019,7 +1022,7 @@ display: none;
                     font-size: 1.8rem;
                     font-weight: bold;
                     text-align: center;
-                    font-family: "Open Sans";
+                    
                     margin: 0;
                     padding: 0.5rem;
                     box-sizing: border-box;

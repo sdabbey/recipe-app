@@ -72,13 +72,13 @@ const SignUpPage = () => {
 <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
 <div className="sm:mx-auto sm:w-full sm:max-w-sm">
  
-  <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+  <h2 className="mt-6 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900 dark:text-gray-200">
     Create an account
   </h2>
 </div>
 
-<div className="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
-  <div className="error-messages h-14">
+<div className="mt-3 sm:mx-auto sm:w-full sm:max-w-sm">
+  <div className="error-messages h-fit">
   {error && <div className="error-message">
       <p>{error}</p>
     </div>}
@@ -88,7 +88,7 @@ const SignUpPage = () => {
   </div>
   <form className="space-y-6" onSubmit={handleFormSubmit}  method="POST">
     <div>
-      <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+      <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200">
         Email address
       </label>
       <div className="mt-2">
@@ -106,7 +106,7 @@ const SignUpPage = () => {
 
     <div>
       <div className="flex items-center justify-between">
-        <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+        <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200">
           Password
         </label>
         
@@ -126,7 +126,7 @@ const SignUpPage = () => {
 
     <div>
       <div className="flex items-center justify-between">
-        <label htmlFor="confirm-password" className="block text-sm font-medium leading-6 text-gray-900">
+        <label htmlFor="confirm-password" className="block text-sm font-medium leading-6 text-gray-900 dark:text-gray-200">
           Confirm Password
         </label>
         
@@ -155,7 +155,7 @@ const SignUpPage = () => {
     </div>
   </form>
 
-  <p className="mt-10 text-center text-sm text-gray-500">
+  <p className="mt-10 text-center text-sm text-gray-500 dark:text-gray-400">
     Already a member?{' '}
     <button onClick={() => router.push('signin')}  className="font-semibold leading-6 text-purple-700 hover:text-purple-500">
       Log In

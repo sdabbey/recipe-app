@@ -6,6 +6,7 @@ import SessionProvider from "./SessionProvider";
 import Sidebar from "./components/Sidebar";
 import { ReactNode } from "react";
 
+
 const DynamicComponent = dynamic(() => import("./Navbar"), {
   ssr: false,
 });
@@ -26,7 +27,9 @@ const RootLayout = ({ children }: LayoutProps) => {
   return (
     <html lang="en">
       <body className={`${inter.className} h-screen flex flex-col box-border`}>
+        
         <SessionProvider>
+
           <DynamicComponent />
           <div style={{ height: "100%", width: "100%", boxSizing: "border-box", padding: ".5rem", margin: "0", position: "relative", overflow: "hidden" }}>
             <Sidebar />
