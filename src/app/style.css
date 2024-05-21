@@ -2,6 +2,8 @@
   --main-page-bg: white;
   --main-page-accent: rgb(126 34 206);
   --recipe-accent: black;
+  --input-bg: white;
+  --input-placeholder: black;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -9,6 +11,8 @@
     --main-page-bg: #11101d;
     --main-page-accent: rgb(126 34 206);
     --recipe-accent: white;
+    --input-bg: rgba(126, 34, 206, 0.226);
+    --input-placeholder: white;
   }
 }
 .navbar {
@@ -255,8 +259,20 @@
 }
 .recipe-create-container input, .recipe-create-container textarea {
   border: 1px solid grey;
+  background: var(--input-bg);
+  color: var(--recipe-accent);
 }
 .recipe-create-container .editor-toolbar {
+  color: var(--recipe-accent);
+  background: var(--main-page-bg);
+}
+.recipe-create-container .CodeMirror {
+  background: var(--input-bg);
+}
+.recipe-create-container .CodeMirror-placeholder {
+  color: var(--input-placeholder) !important;
+}
+.recipe-create-container .CodeMirror-line span {
   color: var(--recipe-accent);
 }
 
@@ -313,6 +329,7 @@
   position: relative;
   box-sizing: border-box;
   border: 1px solid rgba(17, 16, 29, 0.062745098);
+  color: var(--recipe-accent);
 }
 .recipe-detail-container .recipe-first-sec .card-icons {
   color: rgb(126, 34, 206);
@@ -435,6 +452,7 @@
   justify-content: space-between;
   font-size: 0.9em;
   border: 1px solid rgba(17, 16, 29, 0.062745098);
+  color: var(--recipe-accent);
 }
 .recipe-detail-container .recipe-second-sec .recipe-ingredients {
   width: 40%;
