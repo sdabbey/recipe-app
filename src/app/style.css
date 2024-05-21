@@ -301,6 +301,24 @@
 .recipe-update-container .EasyMDEContainer .CodeMirror .CodeMirror-scroll {
   min-height: 120px !important;
 }
+.recipe-update-container input, .recipe-update-container textarea {
+  border: 1px solid grey;
+  background: var(--input-bg);
+  color: var(--recipe-accent);
+}
+.recipe-update-container .editor-toolbar {
+  color: var(--recipe-accent);
+  background: var(--main-page-bg);
+}
+.recipe-update-container .CodeMirror {
+  background: var(--input-bg);
+}
+.recipe-update-container .CodeMirror-placeholder {
+  color: var(--input-placeholder) !important;
+}
+.recipe-update-container .CodeMirror-line span {
+  color: var(--recipe-accent);
+}
 .recipe-update-container .update-action {
   display: flex;
 }

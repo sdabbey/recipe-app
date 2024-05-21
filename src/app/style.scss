@@ -307,6 +307,24 @@ display: none;
             }
         }
     }
+    input, textarea{
+        border: 1px solid grey;
+        background: var(--input-bg);
+        color: var(--recipe-accent);
+    }
+    .editor-toolbar{
+        color: var(--recipe-accent);
+        background: var(--main-page-bg);
+    }
+    .CodeMirror{
+        background: var(--input-bg);
+    }
+    .CodeMirror-placeholder{
+        color: var(--input-placeholder) !important;
+    }
+    .CodeMirror-line span{
+        color: var(--recipe-accent);
+    }
     .update-action{
         display: flex;
         .update-action-btn{

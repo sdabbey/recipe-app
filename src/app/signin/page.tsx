@@ -43,7 +43,7 @@ export default function Signin() {
       if (result?.error) {
         setError('Invalid user details. Try again');
       } else {
-        setSuccess("User SignIn successful")
+        setSuccess("User signed in successfully")
         router.push('/dashboard/');
       }
     } catch (error) {

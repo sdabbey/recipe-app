@@ -41,7 +41,7 @@ export default function RecipesPage() {
   return (
     <main className="recipe-container flex flex-col items-center justify-start gap-5 p-24 pb-0 pt-5 border-2" style={{ "height": "100%" }}>
       <div className="recipe-header flex justify-between items-center p-3 w-full h-1/5 border-2" style={{ "height": "15%" }}>
-        <h4>Recipes List</h4>
+        <h4 className="dark:text-white">Recipes List</h4>
         {(session.data?.user) ? <Link className="bg-purple-600 rounded text-white p-2" href={"/recipes/create"}>Add new Recipe</Link> : null}
 
 
