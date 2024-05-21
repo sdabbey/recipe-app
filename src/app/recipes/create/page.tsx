@@ -176,7 +176,7 @@ const CreateRecipe = () => {
                         className='w-full p-2 rounded focus:border-purple-700 focus:shadow-none focus:outline-none'
                         type="number" value={cookTime || ''} 
                         onChange={e => setcookTime(parseInt(e.target.value))}
-                        placeholder='Cook Time (minutes)' 
+                        placeholder='Cooking Time (minutes)' 
                         required
                         
                     />
