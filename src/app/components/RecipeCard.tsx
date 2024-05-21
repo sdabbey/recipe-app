@@ -51,7 +51,7 @@ const RecipeCard: React.FC<RecipeCardProps> = (props) => {
                     <span>Dinner</span>
                     <span>Lunch</span> */}
                     <LuChefHat className='card-icons'/>
-                    <p>{props.userEmail}</p>
+                    <p className='text-sm'>{props.userEmail}</p>
     
                 </div>
             </div>

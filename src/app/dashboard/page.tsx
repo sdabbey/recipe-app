@@ -6,6 +6,7 @@ import { CiMenuFries } from "react-icons/ci"
 import { dScript } from '../Navbar';
 import Layout from '../layout';
 import { signOut, useSession } from 'next-auth/react';
+import Link from 'next/link';
 const Dashboard = () => {
 
     const session = useSession();
@@ -49,7 +50,7 @@ const Dashboard = () => {
         
     
   return (
-    <Layout showNavbar={false}>
+   
       <>
       <div className="sidemenu" id='sidemenu'>
         <div className="logo_content">
@@ -69,15 +70,15 @@ const Dashboard = () => {
                 <span className="tooltip">Search</span>
             </li>
             <li>
-                <a href="#">
+                <Link href="/">
                     <BiHome className='sidemenu-icon'/>
                     <span className="links_name">Home</span>
-                </a>
+                </Link>
                 <span className="tooltip">Home</span>
             </li>
             
             <li>
-                <a href="#">
+                <a href="/dashboard/myrecipes/">
                     <BiBookOpen className='sidemenu-icon' />
                     <span className="links_name">My Recipes</span>
                 </a>
@@ -105,9 +106,9 @@ const Dashboard = () => {
                 <div className="profile_details">
                    {/* <img src="salad.jpg" alt=""> */}
                     <div className="name_job">
-                        <div className="name">
+                        {/* <div className="name">
                             Yung Hydrus
-                        </div>
+                        </div> */}
                         <div className="job">
                             {session?.data?.user?.email}
                         </div>
@@ -123,25 +124,25 @@ const Dashboard = () => {
           <h1 className={`logo text-purple-700 ${dScript.className}`}><GiChickenOven className='logo-icon'/>FlavourFuse</h1>
           <ul className="btn-tabs-container">
               <li>
-                  <a href="#" className="btn">Add Recipe <BiPlus className="tab-icon"/></a>
+                  <Link href="/recipes/create/" className="btn">Add Recipe <BiPlus className="tab-icon"/></Link>
               </li>
               <li>
-                  <a href="#" className="btn">My Recipes <BiBookOpen className="tab-icon"/></a>
+                  <Link href="/dashboard/myrecipes/" className="btn">My Recipes <BiBookOpen className="tab-icon"/></Link>
               </li>
               <li>
-                  <a href="#" className="btn">Search <BiSearch className="tab-icon"/></a>
+                  <Link href="#" className="btn">Search <BiSearch className="tab-icon"/></Link>
               </li>
               <li>
-                  <a href="#" className="btn">Favourites <BiHeart className="tab-icon"/></a>
+                  <Link href="#" className="btn">Favourites <BiHeart className="tab-icon"/></Link>
               </li>
               <li>
-                  <a href="#" className="btn">Recent Recipes <BiTime className="tab-icon"/></a>
+                  <Link href="#" className="btn">Recent Recipes <BiTime className="tab-icon"/></Link>
               </li>
 
           </ul>
       </div>
       </>
-    </Layout>
+   
    
   )
 }

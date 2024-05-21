@@ -19,15 +19,15 @@ const metadata: Metadata = {
 
 interface LayoutProps {
   children: ReactNode;
-  showNavbar?: boolean;
+  // showNavbar?: boolean;
 }
 
-const RootLayout = ({ children, showNavbar = true }: LayoutProps) => {
+const RootLayout = ({ children }: LayoutProps) => {
   return (
     <html lang="en">
       <body className={`${inter.className} h-screen flex flex-col box-border`}>
         <SessionProvider>
-          {showNavbar && <DynamicComponent />}
+          <DynamicComponent />
           <div style={{ height: "100%", width: "100%", boxSizing: "border-box", padding: ".5rem", margin: "0", position: "relative", overflow: "hidden" }}>
             <Sidebar />
             {children}

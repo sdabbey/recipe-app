@@ -4,14 +4,20 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  
+  --main-page-bg: #ffffff;
 }
 
-
+@media (prefers-color-scheme: dark) {
+  :root {
+      --main-page-bg: #11101d;
+      --main-page-accent: rgb(126 34 206);
+   
+  }
+}
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: white;
+  background: var(--main-page-bg);
 }
 
 @layer utilities {

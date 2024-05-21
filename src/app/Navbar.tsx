@@ -66,7 +66,7 @@ const Navbar = () => {
         
     
         <div className="nav-items">
-          <Link className={`nav-logo mx-3 my-1 text-purple-700 text-2xl font-bold flex items-center lg:mb-0 lg:mt-0 ${dScript.className}`} href="/">
+          <Link className={`nav-logo mx-4 my-1 text-purple-700 text-2xl font-bold flex items-center lg:mb-0 lg:mt-0 ${dScript.className}`} href="/">
             <GiChickenOven />
             {/* Liquid Oven */}
             FlavorFuse
@@ -74,13 +74,13 @@ const Navbar = () => {
             
           <li className='nav-item'>
               <Link
-                className="text-black/50 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none lg:px-2"
+                className="text-black/50 dark:text-white/70 transition duration-200 dark:hover:text-white hover:ease-in-out focus:text-black/80 active:text-black/80 dark:active:text-purple-400 motion-reduce:transition-none lg:px-2"
                 aria-current="page"
                 href={"/recipes"}>Recipes</Link>
           </li>
           {session.data?.user ? <li className='nav-item'>
           <Link
-                className="text-black/50 transition duration-200 hover:text-black/80 hover:ease-in-out focus:text-black/80 active:text-black/80 motion-reduce:transition-none lg:px-2"
+                className="text-black/50 dark:text-white/70 transition duration-200 dark:hover:text-white hover:ease-in-out focus:text-black/80 active:text-black/80 dark:active:text-purple-400 motion-reduce:transition-none lg:px-2"
                 aria-current="page"
                 href={"/dashboard"}>Dashboard</Link>
           </li> : null}

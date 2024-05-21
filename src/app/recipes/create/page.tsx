@@ -133,7 +133,7 @@ const CreateRecipe = () => {
     return (
         <div className='recipe-create-container flex items-center justify-center pt-4'>
            <form onSubmit={handleSubmit} className='p-2 flex  lg:w-1/3 w-full box-border flex-col'>
-            <h1 className="mb-3 text-center font-bold w-full box-border">Create Recipe</h1>
+            <h1 className="mb-3 text-center font-bold w-full box-border dark:text-purple-700">Create Recipe</h1>
                 <div className='mb-3 w-full box-border '>
                     <input
                         className='w-full p-2 rounded focus:border-purple-700 focus:shadow-none focus:outline-none'
@@ -156,7 +156,7 @@ const CreateRecipe = () => {
                     ></textarea>
                 </div>
                <SimpleMDE  value={instructions} 
-                    
+                    className='dark:placeholder:text-color: purple-500'
                     onChange={(newValue) => setInstructions(newValue)}
                     placeholder='Instructions'
                     />

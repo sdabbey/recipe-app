@@ -1,17 +1,26 @@
 :root {
   --main-page-bg: white;
   --main-page-accent: rgb(126 34 206);
+  --recipe-accent: black;
 }
 
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-page-bg: #11101d;
+    --main-page-accent: rgb(126 34 206);
+    --recipe-accent: white;
+  }
+}
 .navbar {
   width: 100%;
   height: 62px;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  color: white;
+  color: var(--main-page-accent);
   font-family: "Open Sans";
   box-sizing: border-box;
+  background: var(--main-page-bg);
 }
 .navbar .nav-items {
   display: flex;
@@ -154,6 +163,10 @@
 .recipe-container {
   padding: 1rem;
   width: 100%;
+  border: 2px solid rgba(126, 34, 206, 0.192);
+}
+.recipe-container .recipe-header {
+  border: 2px solid rgba(126, 34, 206, 0.192);
 }
 .recipe-container .recipe {
   width: 23.8095238095%;
@@ -167,6 +180,7 @@
   align-items: center;
   position: relative;
   box-sizing: border-box;
+  color: var(--recipe-accent);
   border-radius: 10px;
 }
 .recipe-container .recipe .recipe-card .card-icons {
@@ -727,7 +741,7 @@
     padding: 0.5rem;
     overflow-y: scroll;
     display: flex;
-    align-items: flex-end;
+    align-items: flex-start;
     justify-content: flex-end;
     flex-wrap: wrap;
   }
@@ -751,6 +765,7 @@
     border-radius: 10px;
   }
   .recipe-container .recipe-wrapper .recipe .recipe-card .card-icons {
+    font-size: 14px;
     color: rgb(126, 34, 206);
   }
   .recipe-container .recipe-wrapper .recipe .recipe-card .image-box {
@@ -1106,15 +1121,9 @@
   }
 }
 /* Dashboard */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --main-page-bg: #11101d;
-    --main-page-accent: rgb(126 34 206);
-  }
-}
 .sidemenu {
   position: fixed;
-  height: 100%;
+  height: calc(100% - 60px);
   width: 75px;
   bottom: 0;
   left: 0;

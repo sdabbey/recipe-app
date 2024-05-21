@@ -47,7 +47,7 @@ export default function RecipesPage() {
 
       </div>
       <div className="recipe-wrapper flex w-full items-start justify-around flex-wrap gap-2" style={{ "height": "85%" }}>
-        {recipesList.map(item => {
+        {recipesList.map((item) => {
           return (item.imageUrl) ? <RecipeCard description={""} key={item.id} {...item}></RecipeCard> : null;
         })}
 
